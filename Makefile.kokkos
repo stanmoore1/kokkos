@@ -1,9 +1,13 @@
 # Default settings common options
 
+#LAMMPS specific settings:
+KOKKOS_PATH=../../lib/kokkos
+CXXFLAGS=$(CCFLAGS)
+
 #Options: OpenMP,Serial,Pthreads,Cuda
-#KOKKOS_DEVICES ?= "OpenMP"
-KOKKOS_DEVICES ?= "Pthreads"
-#Options: KNC,SNB,HSW,Kepler,Kepler30,Kepler32,Kepler35,Kepler37,Maxwell,Maxwell50,Maxwell52,Maxwell53,ARMv80,ARMv81,ARMv8-ThunderX,BGQ,Power7,Power8,KNL,BDW,SKX
+KOKKOS_DEVICES ?= "OpenMP"
+#KOKKOS_DEVICES ?= "Pthreads"
+#Options: KNC,SNB,HSW,Kepler,Kepler30,Kepler32,Kepler35,Kepler37,Maxwell,Maxwell50,Maxwell52,Maxwell53,Pascal61,ARMv80,ARMv81,ARMv8-ThunderX,BGQ,Power7,Power8,KNL,BDW,SKX
 KOKKOS_ARCH ?= ""
 #Options: yes,no
 KOKKOS_DEBUG ?= "no"
