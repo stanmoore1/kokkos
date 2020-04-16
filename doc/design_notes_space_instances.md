@@ -16,7 +16,6 @@
 
   * Parallel work is *dispatched* on an execution space instance
 
-  * Execution space instances are conceptually disjoint/independant from each other
   * Execution space instances are conceptually disjoint/independent from each other
 
 
