@@ -529,7 +529,7 @@ class ParallelFor<FunctorType, Kokkos::TeamPolicy<Properties...>,
     CudaParallelLaunch<ParallelFor, LaunchBounds>(
         *this, grid, block, shmem_size_total,
         m_policy.space()
-	    .impl_internal_space_instance());  // copy to device and execute
+            .impl_internal_space_instance());  // copy to device and execute
   }
 
   ParallelFor(const FunctorType& arg_functor, const Policy& arg_policy)
