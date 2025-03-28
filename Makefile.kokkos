@@ -1,14 +1,18 @@
 # Default settings common options.
 
 #LAMMPS specific settings:
+
 KOKKOS_USE_DEPRECATED_MAKEFILES=1
+
 ifndef KOKKOS_PATH
   KOKKOS_PATH=../../lib/kokkos
 endif
 
 CXXFLAGS=$(CCFLAGS)
 ifeq ($(mode),shared)
-CXXFLAGS += $(SHFLAGS)
+  CXXFLAGS += $(SHFLAGS)
+endif
+
 
 ifneq ($(KOKKOS_USE_DEPRECATED_MAKEFILES), 1)
   $(error Makefile support is deprecated. Only CMake builds will be supported from Kokkos 5 on. Set KOKKOS_USE_DEPRECATED_MAKEFILES=1 to silence this error.)
