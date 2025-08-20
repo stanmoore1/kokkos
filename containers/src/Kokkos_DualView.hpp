@@ -1009,7 +1009,8 @@ class DualView : public ViewTraits<DataType, Properties...> {
         resync_host(properties);
 
         /* Mark Device copy as modified */
-        ++modified_flags(1);
+        if constexpr (!impl_dualview_is_single_device)
+          ++modified_flags(1);
       }
     };
 
@@ -1023,7 +1024,8 @@ class DualView : public ViewTraits<DataType, Properties...> {
         resync_device(properties);
 
         /* Mark Host copy as modified */
-        ++modified_flags(0);
+        if constexpr (!impl_dualview_is_single_device)
+          ++modified_flags(0);
       }
     };
 
